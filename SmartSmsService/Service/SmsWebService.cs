@@ -3,6 +3,7 @@ using SmartSmsService.Model;
 
 using SmsWebService;
 using System.Web;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace SmartSmsService.Service
@@ -410,6 +411,8 @@ namespace SmartSmsService.Service
             return messageStatus;
         }
 
+        
+
         private static async Task<string> XmsRequest(string requestData)
         {
 
@@ -417,8 +420,10 @@ namespace SmartSmsService.Service
             string responseData;
             try
             {
-                smsSoap = new SmsSoapClient(SmsSoapClient.EndpointConfiguration.SmsSoap);
-                responseData = Convert.ToString(await smsSoap.XmsRequestAsync(requestData));
+                smsSoap = new SmsSoapClient(SmsSoapClient.EndpointConfiguration.SmsSoap12);
+                var result = await smsSoap.XmsRequestAsync(requestData);
+
+                responseData = Convert.ToString(result.Body.XmsRequestResult);
             }
             catch (Exception)
             {

@@ -4,7 +4,7 @@
 	  <TargetFramework>net6.0</TargetFramework>
 	  <Description>سرویس ارسال اس ام اس smartsms.ir</Description>
 	  <Copyright>MIT license</Copyright>
-	  <PackageProjectUrl>https://github.com/afsharsalar/PIDCoSmsPackage.Core</PackageProjectUrl>
+	  <PackageProjectUrl>https://github.com/afsharsalar/smartSmsService</PackageProjectUrl>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
   </PropertyGroup>
